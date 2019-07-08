@@ -1,0 +1,92 @@
+{
+  "name": "@scipe/jsonld",
+  "version": "0.0.0",
+  "description": "jsonld.js bundled with jsonldRdfaParser and a custom document loader aware of science.ai context",
+  "main": "dist/index.js",
+  "module": "esdist/index.js",
+  "scripts": {
+    "format": "prettier --single-quote --write \"{src,test}/**/*.js\"",
+    "watch": "babel --watch src --out-dir dist",
+    "test": "./node_modules/.bin/mocha --require @babel/register --exit",
+    "build": "rm -rf dist; mkdir dist; babel src -d dist --env-name cjs",
+    "build-esm": "rm -rf esdist; mkdir esdist; babel src -d esdist --env-name esm",
+    "prepare": "npm run build && npm run build-esm",
+    "postversion": "git push && git push --tags"
+  },
+  "prettier": {
+    "singleQuote": true
+  },
+  "eslintConfig": {
+    "extends": "@scipe"
+  },
+  "babel": {
+    "presets": [
+      [
+        "@babel/preset-env",
+        {
+          "targets": "> 0.25%, not dead"
+        }
+      ]
+    ],
+    "plugins": [
+      "@babel/plugin-transform-runtime",
+      "@babel/plugin-transform-async-to-generator"
+    ],
+    "env": {
+      "cjs": {
+        "presets": [
+          [
+            "@babel/preset-env",
+            {
+              "modules": "commonjs"
+            }
+          ]
+        ]
+      },
+      "esm": {
+        "presets": [
+          [
+            "@babel/preset-env",
+            {
+              "modules": false
+            }
+          ]
+        ]
+      }
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/science-periodicals/jsonld.git"
+  },
+  "author": "Sebastien Ballesteros",
+  "license": "See README.md",
+  "bugs": {
+    "url": "https://github.com/science-periodicals/jsonld/issues"
+  },
+  "homepage": "https://github.com/science-periodicals/jsonld#readme",
+  "dependencies": {
+    "@babel/runtime": "^7.4.4",
+    "@scipe/collate": "^1.0.0",
+    "@scipe/ontology": "^23.0.0",
+    "get-dom": "^13.0.0",
+    "is-client": "^0.0.2",
+    "jsonld": "0.4.12",
+    "jsonld-rdfa-parser": "^2.0.0",
+    "striptags": "^2.2.1",
+    "traverse": "^0.6.6",
+    "uuid": "^3.3.2"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.4.4",
+    "@babel/core": "^7.4.4",
+    "@babel/node": "^7.2.0",
+    "@babel/plugin-transform-async-to-generator": "^7.4.4",
+    "@babel/plugin-transform-runtime": "^7.4.4",
+    "@babel/preset-env": "^7.4.4",
+    "@babel/register": "^7.4.4",
+    "@scipe/eslint-config": "^1.0.0",
+    "mocha": "^6.1.4",
+    "prettier": "^1.17.1"
+  }
+}
