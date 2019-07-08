@@ -1,6 +1,6 @@
 {
   "name": "@scipe/jsonld",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "jsonld.js bundled with jsonldRdfaParser and a custom document loader aware of science.ai context",
   "main": "dist/index.js",
   "module": "esdist/index.js",
