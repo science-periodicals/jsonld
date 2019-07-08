@@ -1,5 +1,7 @@
 # @scipe/jsonld
 
+[![CircleCI](https://circleci.com/gh/science-periodicals/jsonld.svg?style=svg&circle-token=91e6954abb81e6d3126ed01415f040286ee1d657)](https://circleci.com/gh/science-periodicals/jsonld)
+
 [![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
 
 [sci.pe](https://sci.pe) context and a version of
