@@ -79,6 +79,6 @@ const tree = embed(node, graph);
 
 ## License
 
-`@scipe/collate` is dual-licensed under commercial and open source licenses
+`@scipe/jsonld` is dual-licensed under commercial and open source licenses
 ([AGPLv3](https://www.gnu.org/licenses/agpl-3.0.en.html)) based on the intended
 use case. Contact us to learn which license applies to your use case.
